@@ -1,0 +1,79 @@
+*{margin: 0;padding:0;box-sizing: border-box;}
+body{
+    background-color: darkslategray;
+    border-radius: 25%;
+}
+h1{
+    text-align: center;
+    background-color: rgba(159, 194, 159, 0.596);
+    font-size: xx-large;
+}
+a{
+    text-align: center;
+    color: aliceblue;
+    font-size: x-large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+a:hover{
+    text-decoration-style: dashed;
+    font-style: oblique;
+    font-size: xx-large;
+}
+nav{
+    max-width: 500px;
+    width: 70%;
+    padding: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    background-color:darkolivegreen;
+    text-align: center;
+    color: aliceblue;
+    border-style: solid;
+    border-radius: 10%;
+}
+nav h1{
+    background-color: darkolivegreen;
+    text-align: center;
+    color: aliceblue;
+    border-radius: 20%;
+}
+footer{
+    text-align: center;
+    border-style: dashed;
+    border-radius: 25%;
+}
+form{
+    background-color: aliceblue;
+    max-width: 500px;
+    width: 50%;
+    padding: 20px;
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%,-50%);
+}
+form h3{
+    text-align: center;
+    color: rgb(31, 53, 53);
+
+}
+ form input[type="text"],
+ form input[type="password"]
+ ,form input[type="email"],form input[type="tel"]{
+     width: 100%;
+     height: 45px;
+     border: 1px solid #ccc;
+     padding-left: 10px;
+     margin: 10px;
+ }
+form input[type="submit"]{
+    width: 100%;
+    height: 30px;
+    cursor: pointer;
+    background-color: darkslategray;
+    color: aliceblue;
+    border-radius: 25%;
+}
