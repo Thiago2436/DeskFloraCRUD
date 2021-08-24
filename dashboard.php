@@ -1,4 +1,9 @@
+<?php
 
+session_start();
+include_once("conex.php");
+
+?>
 <!DOCTYPE html>
     <html lang="pt-br">
     <head>
@@ -34,7 +39,7 @@
                 text-decoration-style:solid;
                 font-style: oblique;
                 font-size: x-large;
-                color: darkslategray;
+                color:darkgreen;
             }
            
         </style>
@@ -47,19 +52,20 @@
         <p>
         <a href="individuos.html"> [CADASTRAR NOVO ] </a>
         <a href="dashboard.php">  [ ATUALIZAR PAGINA ] </a><br><br>
-        <a href="Login.html"> Sair/Salvar </a>
+        <a href="sair.php"> Sair/Salvar </a>
         <hr>
         </p>
         <?php
-        
-            
-        $con = mysqli_connect('localhost',"root","123456789",'DeskFlora',)
-            or die (" Não conectou ");
-        
+          
         $result_ind= "SELECT * FROM individuos" ;
         $result_indi= mysqli_query($con, $result_ind);
-        $nomeuser = $nome; 
-        echo " <BR> LOGADO <BR>".$nomeuser."_";
+      
+        echo " <BR> LOGADO <BR>".$_SESSION['usuarioNome']." <br> : ID : ".$_SESSION['usuarioid'];
+        if(empty($_SESSION['usuarioNome'])){
+                    $_SESSION['loginErro'] = "Usuario  ou Senha Invalido";
+                    unset($_SESSION['loginErro']);
+                    header("Location: Login.php");
+        }else{
         
             
             while($row_ind = mysqli_fetch_assoc($result_indi)){
@@ -70,7 +76,7 @@
                 echo " Diametro (CAP) : ".$row_ind['diametro']." (cm) </p><hr>";
                              
             }
-
+        }
         ?>
         
     </body>

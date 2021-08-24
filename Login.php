@@ -21,9 +21,23 @@ session_start();
         <input type="password" name="senha" id="senha" placeholder=" Senha "><br>
         <input type="submit" value="Login">
     </form>
+    <h1>
+    <?php
+
+        if(isset($_SESSION['loginErro'])){
+            echo $_SESSION['loginErro'];
+            unset($_SESSION['loginErro']);
+        }
+    
+    ?>
+    </h1>
     <br>
     <footer>
-    <a href="index.html"> SAIR SEM LOGAR ! </a>
+        <h1>
+        
+        <a href="index.html"> SAIR SEM LOGAR ! </a>
+
+        </h1>
     </footer>
 </body>
 </html>

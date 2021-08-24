@@ -25,7 +25,7 @@ a:hover{
     text-decoration-style:solid;
     font-style:normal;
     font-size: x-large;
-    color: darkslategray;
+    color: rgb(120, 204, 204);
 }
 nav{
     max-width: 500px;
