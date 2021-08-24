@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+include_once("conex.php");
+
+?>
 <html>
 <link rel="stylesheet" href="Sstilo.css">
                 </html>
@@ -13,9 +19,6 @@
                 
                 if(!empty($nome))
                 {
-                    $con = mysqli_connect('localhost',"root","123456789",'DeskFlora',)
-                    or die (" Não conectou ");
-
                     $existe = mysqli_query($con,"SELECT * FROM usuario  WHERE nome ='$nome'")
                      or die (" consulta indeferida");
                      
