@@ -49,24 +49,27 @@ include_once("conex.php");
         <title>Desk Flora Dash Board</title>
     </head>
     <body>
+        <nav>
         <p>
         <a href="individuos.html"> [CADASTRAR NOVO ] </a>
         <a href="dashboard.php">  [ ATUALIZAR PAGINA ] </a><br><br>
-        <a href="sair.php"> Sair/Salvar </a>
+        <a href="sair.php"> Sair/Salvar </a><br>
+        <a href="gerar_planilha.php"> [Gerar Planilha] </a>
         <hr>
         </p>
+        </nav>
         <?php
           
         $result_ind= "SELECT * FROM individuos" ;
-        $result_indi= mysqli_query($con, $result_ind);
-      
-        echo " <BR> LOGADO <BR>".$_SESSION['usuarioNome']." <br> : ID : ".$_SESSION['usuarioid'];
+        $result_indi= mysqli_query($conn, $result_ind);
+        
+        echo " <h1><BR> LOGADO  : [ ".$_SESSION['usuarioNome']." ] <br> ID : ".$_SESSION['usuarioid']."</h1><hr>";
         if(empty($_SESSION['usuarioNome'])){
                     $_SESSION['loginErro'] = "Usuario  ou Senha Invalido";
                     unset($_SESSION['loginErro']);
                     header("Location: Login.php");
         }else{
-        
+                
             
             while($row_ind = mysqli_fetch_assoc($result_indi)){
                 echo "<h1>ID :".$row_ind['id']."<br> </h1>";
@@ -74,8 +77,10 @@ include_once("conex.php");
                 echo " Nome Cientifico : ".$row_ind['nomecientifico']."<br>";
                 echo " Altura Total  : ".$row_ind['altura']." (mts) <br>";
                 echo " Diametro (CAP) : ".$row_ind['diametro']." (cm) </p><hr>";
-                             
+               $cont ++;
+                           
             }
+            echo "<h1> Contagem Total : [ ".$cont." ] Registros</h1>"; 
         }
         ?>
         

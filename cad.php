@@ -19,14 +19,14 @@ include_once("conex.php");
                 
                 if(!empty($nome))
                 {
-                    $existe = mysqli_query($con,"SELECT * FROM usuario  WHERE nome ='$nome'")
+                    $existe = mysqli_query($conn,"SELECT * FROM usuario  WHERE nome ='$nome'")
                      or die (" consulta indeferida");
                      
                      if(mysqli_fetch_assoc($existe)){
                          echo('<h1>NOME JA CADASTRADO ! FAÇA SEU LOGIN </h1>');
                             }
                             else{
-                          mysqli_query($con, "INSERT INTO usuario (nome, email, telefone, senha) VALUES ('$nome', '$email','$telefone','$senha')")
+                          mysqli_query($conn, "INSERT INTO usuario (nome, email, telefone, senha) VALUES ('$nome', '$email','$telefone','$senha')")
                         or die ("Não inseriu ");}
 
                 }

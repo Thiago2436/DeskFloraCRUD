@@ -1,7 +1,11 @@
-<?php
+<?php 
 
-
-$con = mysqli_connect('localhost',"root","123456789",'DeskFlora',)
-or die (" Não conectou ");
+$servidor = "localhost";
+	$usuario = "root";
+	$senha = "123456789";
+	$dbname = "DeskFlora";
+	
+	//Criar a conexao
+	$conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
 
 ?>

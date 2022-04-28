@@ -2,15 +2,15 @@
     <?php
     session_start();
             
-        $con = mysqli_connect('localhost',"root","123456789",'DeskFlora',)
+        $conn = mysqli_connect('localhost',"root","123456789",'DeskFlora',)
             or die (" Não conectou ");
             if((isset($_POST['nome'])) && (isset($_POST['senha']))){
                 
-                $nome = mysqli_real_escape_string($con, $_POST['nome']);
-                $senha = mysqli_real_escape_string($con,$_POST['senha']);
+                $nome = mysqli_real_escape_string($conn, $_POST['nome']);
+                $senha = mysqli_real_escape_string($conn,$_POST['senha']);
                 
                 $sql = "SELECT * FROM usuario WHERE nome = '$nome' && senha = '$senha' ";
-                $result = mysqli_query($con, $sql);
+                $result = mysqli_query($conn, $sql);
                 $resultado = mysqli_fetch_assoc($result);
                 if(empty($resultado))
                 {
